@@ -79,9 +79,11 @@ default capability set and succeeds with `NET_ADMIN` added.
 
 Nothing here runs an agent. There is no MCP server, no agent runtime, no exposed
 port — `CMD` is a login shell and `./deck` is how you drive it. That is on
-purpose: a second repo, `icepick-offsec-autonomous`, builds `FROM` this image
-and adds the agent layer (HexStrike AI's MCP server) on top. This one stays
-tool-only.
+purpose: a second repo, [icepick-agent](https://github.com/NotebookNomad/icepick-agent),
+builds `FROM` this image and currently owns the HexStrike MCP overlay. This
+repository remains tool-only until the planned shared-runtime extraction. The
+repository rename does not change the image tag or move runtime ownership; see
+[the migration guide](repository-rename.md).
 
 The cost of that split is a contract you can't see from the Dockerfile alone.
 Some of what this image exposes is named for what HexStrike's probes invoke

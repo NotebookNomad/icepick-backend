@@ -104,7 +104,7 @@ pick_vpn() {
 
 usage() {
   cat <<'EOF'
-deck - driver for icepick-offsec, a bug bounty & CTF toolkit
+deck - driver for icepick-backend, a bug bounty & CTF toolkit
 
   ./deck build              build the image
   ./deck shell              interactive shell

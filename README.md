@@ -1,4 +1,4 @@
-# icepick-offsec
+# icepick-backend
 
 **A disposable Kali toolbox for authorized bug bounty and CTF work, driven by one
 command — with the HTB/THM VPN-and-browser problem already solved.**
@@ -62,15 +62,23 @@ architecture decides whether CTF binary-exploitation tools can run the x86-64
 binaries most pwn challenges ship. Both are covered in
 [host requirements](docs/internals.md#host-requirements-vpn-support-and-cpu-architecture).
 
+Previously named `icepick-offsec`. See the [rename migration guide](docs/repository-rename.md)
+for existing checkouts. The shared MCP runtime is planned; today this repository
+still supplies the tool image and manual `deck` workflow.
+
 ## Getting started
 
 ```bash
-git clone https://github.com/NotebookNomad/icepick-offsec.git
+git clone https://github.com/NotebookNomad/icepick-backend.git icepick-offsec
 cd icepick-offsec
 ./deck build        # ~10 GB, 20-30 min the first time. Go make coffee.
 ./deck wordlists    # once - SecLists and friends onto a shared volume (~2 GB)
 ./deck shell        # you're in
 ```
+
+The explicit clone destination retains `icepick-offsec` as the directory name,
+so Compose keeps its legacy project and volume names. Do not rename an existing
+checkout as part of the GitHub rename.
 
 Those first two commands are one-time setup. After that, `./deck shell` takes a
 couple of seconds and is how you start every session.
